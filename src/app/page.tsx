@@ -26,8 +26,35 @@ const philosophy = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Suryansh Malik",
+  url: "https://surya.nsh.co.in",
+  sameAs: [
+    "https://github.com/SuryaMalik",
+    "https://linkedin.com/in/suryansh-malik",
+  ],
+  jobTitle: "Machine Learning Engineer",
+  description:
+    "ML engineer and researcher specialising in computer vision, geospatial AI, reinforcement learning, and explainable AI.",
+  knowsAbout: [
+    "Machine Learning",
+    "Computer Vision",
+    "Geospatial AI",
+    "Reinforcement Learning",
+    "Explainable AI",
+    "Deep Learning",
+  ],
+};
+
 export default function Home() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div className="mx-auto max-w-[600px] px-6 py-16 sm:py-24">
       <Fade className="flex flex-col gap-20">
         {/* Hero */}
@@ -123,5 +150,6 @@ export default function Home() {
         </FadeItem>
       </Fade>
     </div>
+    </>
   );
 }

@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Fade, FadeItem } from "@/components/fade";
 
-export const metadata: Metadata = { title: "Research" };
+export const metadata: Metadata = {
+  title: "Research",
+  description:
+    "Research interests and publications by Suryansh Malik — computer vision, explainable AI, reinforcement learning, foundation models, and geospatial intelligence.",
+  alternates: { canonical: "/research" },
+};
 
 const interests = [
   "Computer Vision",

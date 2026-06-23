@@ -16,7 +16,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return { title: project.name };
+  return {
+    title: project.name,
+    description: `${project.tagline} ${project.intro}`.slice(0, 155),
+    alternates: { canonical: `/work/${slug}` },
+    openGraph: {
+      title: project.name,
+      description: project.tagline,
+      url: `https://surya.nsh.co.in/work/${slug}`,
+      type: "article",
+    },
+  };
 }
 
 export default async function ProjectPage({

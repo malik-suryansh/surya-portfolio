@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Fade, FadeItem } from "@/components/fade";
 
-export const metadata: Metadata = { title: "Now" };
+export const metadata: Metadata = {
+  title: "Now",
+  description:
+    "What Suryansh Malik is currently working on — satellite imagery research, AI tooling, foundation models, and edge deployment.",
+  alternates: { canonical: "/now" },
+};
 
 const items = [
   {

@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { notes } from "@/lib/notes";
 import { Fade, FadeItem } from "@/components/fade";
 
-export const metadata: Metadata = { title: "Notes" };
+export const metadata: Metadata = {
+  title: "Notes",
+  description:
+    "Notes on machine learning, deep learning, and AI by Suryansh Malik — experiments, observations, and lessons from building real systems.",
+  alternates: { canonical: "/notes" },
+};
 
 export default function NotesPage() {
   return (

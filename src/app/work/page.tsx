@@ -3,7 +3,12 @@ import Link from "next/link";
 import { projects } from "@/lib/projects";
 import { Fade, FadeItem } from "@/components/fade";
 
-export const metadata: Metadata = { title: "Work" };
+export const metadata: Metadata = {
+  title: "Work",
+  description:
+    "Selected projects by Suryansh Malik spanning computer vision, reinforcement learning, geospatial intelligence, and software engineering.",
+  alternates: { canonical: "/work" },
+};
 
 export default function WorkPage() {
   return (

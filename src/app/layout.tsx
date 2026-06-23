@@ -14,16 +14,39 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://surya.nsh.co.in"),
   title: { default: "Suryansh Malik", template: "%s · Suryansh Malik" },
   description:
-    "ML engineer and researcher. Computer vision, geospatial AI, reinforcement learning, and explainable AI.",
+    "Suryansh Malik — ML engineer and researcher specialising in computer vision, geospatial AI, reinforcement learning, and explainable AI.",
+  keywords: [
+    "Suryansh Malik",
+    "machine learning engineer",
+    "AI researcher",
+    "computer vision",
+    "geospatial AI",
+    "reinforcement learning",
+    "explainable AI",
+    "deep learning",
+  ],
+  authors: [{ name: "Suryansh Malik", url: "https://surya.nsh.co.in" }],
+  creator: "Suryansh Malik",
   openGraph: {
     title: "Suryansh Malik",
-    description: "ML engineer and researcher.",
+    description:
+      "ML engineer and researcher. Computer vision, geospatial AI, reinforcement learning, and explainable AI.",
     url: "https://surya.nsh.co.in",
     siteName: "Suryansh Malik",
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Suryansh Malik",
+    description:
+      "ML engineer and researcher. Computer vision, geospatial AI, reinforcement learning, and explainable AI.",
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 

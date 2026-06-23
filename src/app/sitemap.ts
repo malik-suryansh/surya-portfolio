@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE, lastModified: new Date(), priority: 1.0 },
     { url: `${BASE}/work`, lastModified: new Date(), priority: 0.9 },
     { url: `${BASE}/research`, lastModified: new Date(), priority: 0.8 },
-    { url: `${BASE}/notes`, lastModified: new Date(), priority: 0.7 },
     { url: `${BASE}/now`, lastModified: new Date(), priority: 0.6 },
   ];
 

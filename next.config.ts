@@ -1,19 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  trailingSlash: true,
-  async rewrites() {
-    return [
-      {
-        source: "/notes/",
-        destination: "https://coreml.pages.dev/",
-      },
-      {
-        source: "/notes/:path*",
-        destination: "https://coreml.pages.dev/:path*",
-      },
-    ];
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

@@ -25,12 +25,11 @@ export async function GET(
 
   if (contentType.includes("text/html")) {
     let html = await res.text();
-    // Inject <base> pointing to the current request URL with trailing slash.
-    // Quartz uses relative paths (e.g. ../../index.css) — setting base to the
-    // current page URL makes them resolve correctly at any nesting depth.
-    const base = request.nextUrl.pathname.endsWith("/")
-      ? request.nextUrl.pathname
-      : request.nextUrl.pathname + "/";
+    // Quartz generates `../` relative paths for depth-2 leaf pages, designed to
+    // resolve from a no-trailing-slash URL. Root page uses `./` and needs /notes/.
+    const base = segments.length === 0
+      ? "/notes/"
+      : request.nextUrl.pathname;
     html = html.replace("<head>", `<head><base href="${base}">`);
     return new Response(html, {
       status: res.status,

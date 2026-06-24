@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         source: "/notes/:path*",
         destination: "https://coreml.pages.dev/:path*",
       },
+      {
+        source: "/static/:path*",
+        destination: "https://coreml.pages.dev/static/:path*",
+      },
     ];
   },
 };

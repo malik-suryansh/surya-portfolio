@@ -8,7 +8,7 @@ export function middleware(request: NextRequest) {
   // redirect to add the trailing slash. This prevents Cloudflare Pages from
   // returning an absolute-path 301 that escapes the /notes/ prefix.
   if (
-    pathname.startsWith("/notes/") &&
+    pathname.startsWith("/notes") &&
     !pathname.endsWith("/") &&
     !/\.[^/]+$/.test(pathname)
   ) {

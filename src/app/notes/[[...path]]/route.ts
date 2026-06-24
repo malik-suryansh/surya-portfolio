@@ -34,16 +34,26 @@ export async function GET(
     html = html.replace("<head>", `<head><base href="${base}">`);
     return new Response(html, {
       status: res.status,
-      headers: { "Content-Type": "text/html; charset=utf-8" },
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        // Serve stale copy instantly while revalidating in background.
+        // 60s before Vercel edge considers it stale; up to 24h served while fresh copy fetches.
+        "Cache-Control": "public, s-maxage=60, stale-while-revalidate=86400",
+      },
     });
   }
+
+  // Assets use content-hashed filenames — safe to cache forever.
+  // New Quartz builds generate new hashes, old cached files are simply never requested again.
+  const cacheControl = isAsset
+    ? "public, s-maxage=31536000, immutable"
+    : "public, s-maxage=60, stale-while-revalidate=86400";
 
   return new Response(res.body, {
     status: res.status,
     headers: {
       "Content-Type": contentType,
-      "Cache-Control":
-        res.headers.get("cache-control") ?? "public, max-age=3600",
+      "Cache-Control": cacheControl,
     },
   });
 }

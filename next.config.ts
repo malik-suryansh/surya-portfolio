@@ -5,11 +5,11 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/notes",
-        destination: "https://CLOUDFLARE_PAGES_URL/notes",
+        destination: "https://coreml.pages.dev/",
       },
       {
         source: "/notes/:path*",
-        destination: "https://CLOUDFLARE_PAGES_URL/notes/:path*",
+        destination: "https://coreml.pages.dev/:path*",
       },
     ];
   },
